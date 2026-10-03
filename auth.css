@@ -1,0 +1,731 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070b16;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(66, 92, 255, 0.20),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(0, 210, 255, 0.14),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #050812,
+            #0b1020,
+            #050812
+        );
+}
+
+
+/* Grid effect */
+
+.grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent
+    );
+}
+
+
+/* Floating circles */
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.6;
+    animation: float 8s ease-in-out infinite;
+}
+
+.circle1 {
+    width: 350px;
+    height: 350px;
+
+    background: rgba(65, 88, 255, 0.18);
+
+    top: -120px;
+    left: -100px;
+}
+
+.circle2 {
+    width: 300px;
+    height: 300px;
+
+    background: rgba(0, 200, 255, 0.12);
+
+    right: -100px;
+    bottom: 10%;
+    
+    animation-delay: 2s;
+}
+
+.circle3 {
+    width: 180px;
+    height: 180px;
+
+    background: rgba(130, 70, 255, 0.12);
+
+    left: 15%;
+    bottom: -80px;
+
+    animation-delay: 4s;
+}
+
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   AUTH CONTAINER
+========================================= */
+
+.auth-container {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    margin-bottom: 28px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.logo span span {
+    color: #5c7cff;
+}
+
+
+.logo-icon {
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5068ff,
+            #00bfff
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(55, 105, 255, 0.3);
+}
+
+
+.logo-icon i {
+    font-size: 20px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.auth-card {
+
+    width: 100%;
+
+    max-width: 450px;
+
+    padding: 40px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(15, 21, 38, 0.88);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,0.45),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.04);
+
+    backdrop-filter: blur(20px);
+}
+
+
+/* =========================================
+   FORMS
+========================================= */
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+
+    animation:
+        fadeIn 0.3s ease;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -0.7px;
+}
+
+
+.subtitle {
+
+    color: #8993aa;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+
+.input-group label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #c7cede;
+
+    margin-bottom: 8px;
+}
+
+
+.input-box {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.input-box > i {
+
+    position: absolute;
+
+    left: 15px;
+
+    color: #69748b;
+
+    font-size: 15px;
+
+    pointer-events: none;
+}
+
+
+.input-box input {
+
+    width: 100%;
+
+    height: 50px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    color: #ffffff;
+
+    padding:
+        0 45px 0 44px;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.input-box input::placeholder {
+    color: #626c82;
+}
+
+
+.input-box input:focus {
+
+    border-color: #5874ff;
+
+    background:
+        rgba(88,116,255,0.05);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(88,116,255,0.10);
+}
+
+
+/* =========================================
+   PASSWORD
+========================================= */
+
+.password-label {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+
+.password-label label {
+    margin: 0;
+}
+
+
+.password-label a {
+
+    color: #6e86ff;
+
+    font-size: 12px;
+
+    text-decoration: none;
+}
+
+
+.password-label a:hover {
+    text-decoration: underline;
+}
+
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #68738a;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   REMEMBER / TERMS
+========================================= */
+
+.remember,
+.terms {
+
+    margin-bottom: 22px;
+
+    font-size: 13px;
+
+    color: #858fa5;
+}
+
+
+.remember label,
+.terms label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+
+input[type="checkbox"] {
+
+    width: 15px;
+
+    height: 15px;
+
+    accent-color: #5c76ff;
+
+    cursor: pointer;
+}
+
+
+.terms a {
+
+    color: #7187ff;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.auth-button {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #536dff,
+            #3e57dc
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(72, 92, 255, 0.25);
+
+    transition: 0.25s;
+}
+
+
+.auth-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px
+        rgba(72, 92, 255, 0.35);
+}
+
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 25px 0;
+
+    color: #586278;
+
+    font-size: 11px;
+}
+
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        rgba(255,255,255,0.08);
+}
+
+
+/* =========================================
+   GOOGLE
+========================================= */
+
+.social-button {
+
+    width: 100%;
+
+    height: 50px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+    background:
+        rgba(255,255,255,0.035);
+
+    color: #dce1ec;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: 0.2s;
+}
+
+
+.social-button:hover {
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+
+.social-button i {
+    font-size: 17px;
+}
+
+
+/* =========================================
+   SWITCH
+========================================= */
+
+.switch-text {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #7f899e;
+
+    font-size: 13px;
+}
+
+
+.switch-text button {
+
+    border: none;
+
+    background: transparent;
+
+    color: #2e3a7b;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+.switch-text button:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.copyright {
+
+    margin-top: 25px;
+
+    color: #4f586b;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .auth-container {
+        padding: 25px 15px;
+    }
+
+    .auth-card {
+
+        padding: 28px 22px;
+
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .logo {
+        margin-bottom: 22px;
+    }
+
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>naruto </title>
+
+    <link rel="stylesheet" href="auth.css">
+          
+</head>
+
+<body>
+
+    <!-- Background decoration -->
+    <div class="background">
+        <div class="circle circles1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+
+        <div class="grid"></div>
+    </div>
+
+
+    <!-- Main authentication container -->
+    <main class="auth-container">
+
+        <!-- Logo -->
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-cloud"></i>
+            </div>
+
+            <span>naruto<span>uchiha</span></span>
+        </div>
+
+
+        <!-- Login / Register Card -->
+        <div class="auth-card">
+
+            <!-- LOGIN FORM -->
+            <section id="loginForm" class="form-section active">
+
+                <h1>Welcome Back</h1>
+
+                <p class="subtitle">
+                    Sign in to access your account
+                </p>
+
+
+                <form id="login">
+
+                    <!-- Email -->
+                    <div class="input-group">
+
+                        <label for="loginEmail">
+                            Email Address
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-group">
+
+                        <div class="password-label">
+
+                            <label for="loginPassword">
+                                Password
+                            </label>
+
+                            <a href="#" id="forgotPassword">
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('loginPassword', this)"
+                            >
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Remember -->
+                    <div class="remember">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Login button -->
+                    <button type="submit" class="auth-button">
+
+                        <span>Sign In</span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+
+
+                <p class="switch-text"></p>
+
+                    Don't have an account?
+
+                    <button onclick="showRegister()">
+                        Create Account
+                    </button>
+
+                </p>
+
+            </section>
+
+
+
+            <!-- REGISTER FORM -->
+            <section id="registerForm" class="form-section">
+
+                <h1>Create Account</h1>
+
+                <p class="subtitle">
+                    Create your account to get started
+                </p>
+
+
+                <form id="register">
+
+                    <!-- username -->
+                    <div class="input-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="nyachienga2"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="input-group">
+
+                        <label for="registerEmail">
+                            Email Address
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="registerEmail"
+                                placeholder="justin@example.com"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-group">
+
+                        <label for="registerPassword">
+                            Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                placeholder="hsdhfhfu@123"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('registerPassword', this)"
+                            >
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Confirm password -->
+                    <div class="input-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="hsdhfhfu@123"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('confirmPassword', this)"
+                            >
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Register -->
+                    <button type="submit" class="auth-button">
+
+                        <span>Create Account</span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+
+                <p class="switch-text">
+
+                    Already have an account?
+
+                    <button onclick="showLogin()">
+                        Sign In
+                    </button>
+
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <p class="copyright">
+            © 2026 narutouchiha. All rights reserved.
+        </p>
+
+    </main>
+
+
+    <script src="auth.js"></script>
+
+</body>
+</html>
